@@ -9,7 +9,7 @@ class NavBar extends Component {
       <div style={styles}>
         <Menu pointing secondary>
           <Link to='/'>
-            <Menu.Item style={text} name='Home' />
+            <Menu.Item style={text} name='People Search' />
           </Link>
           <Link to='/person_form'>
             <Menu.Item style={text} name='Add New Person' />

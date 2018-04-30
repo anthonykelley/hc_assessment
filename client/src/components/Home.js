@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
 import { Container, Header, Image, Table, } from 'semantic-ui-react';
 
@@ -22,7 +23,9 @@ class Home extends React.Component {
           </Table.Cell>
           <Table.Cell>
             <Header.Content>
+              <Link to={`/person_form/${p.id}/`} style={styles.linkColor}>
                 {p.first_name} {p.last_name}
+              </Link>
             </Header.Content>
           </Table.Cell>
           <Table.Cell>
@@ -62,7 +65,8 @@ class Home extends React.Component {
 }
 
 const styles = {
-  padding: { paddingTop: '50px'}
+  padding: { paddingTop: '50px', paddingBottom: '50px'},
+  linkColor: { color: '#00b3b3' },
 }
 
 export default Home;

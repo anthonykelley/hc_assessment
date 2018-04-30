@@ -13,6 +13,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/person_form' component={PersonForm} />
+            <Route exact path='/person_form/:id' component={PersonForm} />
             <Route component={NoMatch} />
           </Switch>
       </div>
