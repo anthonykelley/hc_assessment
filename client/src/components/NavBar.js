@@ -11,7 +11,7 @@ class NavBar extends Component {
           <Link to='/'>
             <Menu.Item style={text} name='Home' />
           </Link>
-          <Link to='/my-dashboard'>
+          <Link to='/person_form'>
             <Menu.Item style={text} name='Add New Person' />
           </Link>
         </Menu>

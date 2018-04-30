@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NoMatch from './NoMatch';
 import Home from './Home';
 import NavBar from './NavBar';
+import PersonForm from './PersonForm';
 import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
         <NavBar />
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route exact path='/person_form' component={PersonForm} />
             <Route component={NoMatch} />
           </Switch>
       </div>
