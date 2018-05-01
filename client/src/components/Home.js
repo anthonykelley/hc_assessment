@@ -2,10 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
-import { Container, Header, Image, Table, } from 'semantic-ui-react';
+import { Container, Header, Image, Table, Input, } from 'semantic-ui-react';
 
 class Home extends React.Component {
-  state = { peopleList: [] }
+  state = { peopleList: [], search: '', }
 
   componentDidMount() {
     axios.get('/api/people')
@@ -15,7 +15,11 @@ class Home extends React.Component {
   }
 
   tableView = () => {
-    return this.state.peopleList.map( p => {
+    let people = this.state.peopleList.filter( (person) => {
+      let full_name = `${person.first_name} ${person.last_name}`
+      return person.first_name.toLowerCase().includes(this.state.search.toLowerCase()) || person.last_name.toLowerCase().includes(this.state.search.toLowerCase()) || full_name.toLowerCase().includes(this.state.search.toLowerCase())
+    });
+    return people.map( p => {
       return(
         <Table.Row key={p.id}>
           <Table.Cell>
@@ -42,9 +46,20 @@ class Home extends React.Component {
     })
   }
 
+  updateSearch(e) {
+    this.setState({ search: e.target.value.substr(0,20)})
+  }
+
   render() {
     return (
       <Container style={styles.padding}>
+        <Input
+          placeholder='Search by name...'
+          type='text'
+          value={this.state.search}
+          onChange={e => this.updateSearch(e)}
+          fluid
+        />
         <Table basic='very' celled collapsing>
           <Table.Header>
             <Table.Row>

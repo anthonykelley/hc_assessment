@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios';
-import { Form, Button, Container, Select, Segment, } from 'semantic-ui-react';
+import { Form, Button, Container, Segment, } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 class PersonForm extends React.Component {
