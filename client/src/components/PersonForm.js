@@ -67,7 +67,6 @@ class PersonForm extends React.Component {
     const { first_name, last_name, address, age, hobby, picture } = this.state;
 
     baseUrl = id ? `${baseUrl}/${id}` : baseUrl;
-    debugger
     let params = { first_name, last_name, address, age, hobby, picture }
     if(id)
       axios.put(baseUrl, params)

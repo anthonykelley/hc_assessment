@@ -30,6 +30,18 @@ class Api::PeopleController < ApplicationController
     @person.destroy
   end
 
+  def age_bucket
+    render json: Person.age_bucket
+  end
+
+  def zip_count
+    render json: Person.zip_count
+  end
+
+  def person_count
+    render json: Person.person_count
+  end
+
   private
 
     def set_person

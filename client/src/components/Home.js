@@ -17,7 +17,9 @@ class Home extends React.Component {
   tableView = () => {
     let people = this.state.peopleList.filter( (person) => {
       let full_name = `${person.first_name} ${person.last_name}`
-      return person.first_name.toLowerCase().includes(this.state.search.toLowerCase()) || person.last_name.toLowerCase().includes(this.state.search.toLowerCase()) || full_name.toLowerCase().includes(this.state.search.toLowerCase())
+      return person.first_name.toLowerCase().includes(this.state.search.toLowerCase()) ||
+             person.last_name.toLowerCase().includes(this.state.search.toLowerCase()) ||
+             full_name.toLowerCase().includes(this.state.search.toLowerCase())
     });
     return people.map( p => {
       return(
@@ -47,7 +49,7 @@ class Home extends React.Component {
   }
 
   updateSearch(e) {
-    this.setState({ search: e.target.value.substr(0,20)})
+    this.setState({ search: e.target.value})
   }
 
   render() {

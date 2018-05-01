@@ -4,6 +4,7 @@ import Home from './Home';
 import NavBar from './NavBar';
 import PersonForm from './PersonForm';
 import { Switch, Route } from 'react-router-dom';
+import Dashboard from './Dashboard';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route exact path='/person_form' component={PersonForm} />
             <Route exact path='/person_form/:id' component={PersonForm} />
+            <Route exact path='/dashboard' component={Dashboard} />
             <Route component={NoMatch} />
           </Switch>
       </div>
