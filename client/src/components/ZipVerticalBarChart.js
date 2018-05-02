@@ -1,25 +1,24 @@
 import React from 'react';
 import { Segment } from 'semantic-ui-react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label, } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, } from 'recharts';
 
 class ZipVerticalBarChart extends React.Component {
   render() {
     return (
       <Segment basic>
-        <h2 style={styles.h1}>
+        <h2 style={styles.align}>
           Top 5 Zip Codes
         </h2>
         <BarChart
           width={650}
-          height={525}
+          height={425}
           data={this.props.zip}
           layout='vertical'
           barSize={50}
-          margin={{top: 20, right: 30, left: 20, bottom: 5}}
         >
           <XAxis
             type='number'
-            orientation='top'
+            orientation='bottom'
             tickLine={false}
             axisLine={false}
             style={styles.axisLabels}
@@ -40,7 +39,7 @@ class ZipVerticalBarChart extends React.Component {
             name='Total People'
             dataKey='total'
             fill='#00b3b3'
-            style={styles.pie}
+            style={styles.bar}
           />
         </BarChart>
       </Segment>
@@ -49,9 +48,9 @@ class ZipVerticalBarChart extends React.Component {
 }
 
 const styles = {
-  h1: { textAlign: 'center', paddingLeft: '14em', position: 'absolute', margin: '-15px', whiteSpace: 'nowrap' },
-  pie: { opacity: '.85' },
+  bar: { opacity: '.85' },
   axisLabels: { fontSize: '12.5px' },
+  align: { textAlign: 'center' },
 }
 
 export default ZipVerticalBarChart;

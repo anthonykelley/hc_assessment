@@ -10,7 +10,7 @@ class Person < ApplicationRecord
             WHEN age >= 18 AND age < 30 THEN '18-29'
             WHEN age >= 30 AND age < 45 THEN '30-44'
             WHEN age >= 45 AND age < 65 THEN '45-64'
-            ELSE null
+            ELSE 'Not Specified'
           END AS age_bucket
         FROM people)
 

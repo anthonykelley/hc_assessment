@@ -4,6 +4,14 @@ import { Link, withRouter } from 'react-router-dom';
 
 class NavBar extends Component {
 
+  rightNavs = () => {
+    return (
+      <Link to='/person_form'>
+        <Menu.Item style={text} name='Add New Person' />
+    </Link>
+    )
+  }
+
   render() {
     return (
       <div style={styles}>
@@ -11,12 +19,12 @@ class NavBar extends Component {
           <Link to='/'>
             <Menu.Item style={text} name='People Search' />
           </Link>
-          <Link to='/person_form'>
-            <Menu.Item style={text} name='Add New Person' />
-          </Link>
           <Link to='/dashboard'>
             <Menu.Item style={text} name='Dashboard' />
           </Link>
+          <Menu.Menu position='right'>
+            { this.rightNavs() }
+          </Menu.Menu>
         </Menu>
       </div>
     );

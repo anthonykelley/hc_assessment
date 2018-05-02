@@ -28,11 +28,11 @@ class PersonForm extends React.Component {
       return(
         <div>
           {!this.state.show?
-          <Button onClick={ () => this.toggleDelete()}>
+          <Button type='button' onClick={ () => this.toggleDelete()}>
             Delete
           </Button>
           :
-          <Button color='red' onClick={ () => this.deleteTimecard()}>
+          <Button type='button' color='red' onClick={ () => this.deleteTimecard()}>
             Confirm
           </Button>
           }
@@ -98,7 +98,7 @@ class PersonForm extends React.Component {
     return(
       <Container style={{paddingTop: '30px'}}>
         {this.showHeader()}
-        <Form>
+        <Form onSubmit={this.postForm}>
           <Form.Input
             name='first_name'
             value={first_name}
@@ -116,7 +116,7 @@ class PersonForm extends React.Component {
           <Form.Input
             name='address'
             value={address}
-            label='Address'
+            label='Address (Street Address, Zip Code)'
             placeholder='Address'
             onChange={this.handleChange}
           />
@@ -145,7 +145,6 @@ class PersonForm extends React.Component {
             <Button
               color='teal'
               type='submit'
-              onClick={this.postForm}
             >
               Submit
             </Button>

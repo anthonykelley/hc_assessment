@@ -1,19 +1,18 @@
 import React from 'react';
 import { Segment } from 'semantic-ui-react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label, } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, } from 'recharts';
 
 class AgeBarChart extends React.Component {
   render() {
     return (
       <Segment basic>
-      <h2 style={styles.h1}>
-        Age Distribution
-      </h2>
+        <h2 style={styles.align}>
+          Age Distribution
+        </h2>
         <BarChart
           width={650}
-          height={400}
+          height={420}
           data={this.props.age}
-          margin={{top: 5, right: 30, left: 20, bottom: 20}}
         >
           <CartesianGrid
             strokeDasharray='3 3'
@@ -35,7 +34,7 @@ class AgeBarChart extends React.Component {
             dataKey='total'
             fill='#00b3b3'
             barSize = {50}
-            style={styles.pie}
+            style={styles.bar}
           />
         </BarChart>
       </Segment>
@@ -43,9 +42,9 @@ class AgeBarChart extends React.Component {
 }
 
 const styles = {
-  h1: { textAlign: 'center', paddingLeft: '12em', position: 'absolute', margin: '-45px', whiteSpace: 'nowrap' },
-  pie: { opacity: '.85' },
+  bar: { opacity: '.85' },
   axisLabels: { fontSize: '12.5px' },
+  align: { textAlign: 'center' },
 }
 
 export default AgeBarChart;
